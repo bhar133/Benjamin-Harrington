@@ -1,0 +1,161 @@
+body{ 
+    background-color: purple;
+}
+
+.title{
+    color: gold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+.header-tabs{
+    background-color: gold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+}
+
+.selected-header-tab{
+    background-color: indigo;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    color: gold;
+}
+
+.setting-button{
+    background-color: violet;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.wider-inputs{
+    width: 300px;
+}
+
+.spacer-lg{
+    margin-top: 128px;
+}
+
+.spacer-xl{
+    margin-top: 480px;
+}
+
+
+.spacer-md{
+    margin-top: 50px;
+}
+
+.spacer-sm{
+    margin-top: 16px;
+}
+
+.spacer-xs{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.footer{
+    bottom: 0;
+    position: absolute;
+}
+.logo_img{
+    float: right;
+    margin-right: 20px;
+}
+
+.popup1 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gold;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .popup2 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gold;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+  
+  /* Switch Styling */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: purple;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px purple;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .blocked-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gold;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .blocked-user {
+    margin-bottom: 10px; /* Add margin between blocked users */
+  }

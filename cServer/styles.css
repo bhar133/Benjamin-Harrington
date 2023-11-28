@@ -1,0 +1,32 @@
+body{ 
+    background-color: purple;
+}
+
+.homepage-header{ 
+    background-color: gold;
+}
+
+.header-text{
+    color: purple;
+    font-size: 64px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+
+.spacer-lg{
+    margin-top: 128px;
+}
+
+.spacer-sm{
+    margin-top: 16px;
+}
+
+.tiger-login-btn{
+    background-color: gold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px; 
+}

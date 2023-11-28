@@ -1,0 +1,25 @@
+Ethan Palomino
+epalom2@lsu.edu
+Password
+CSC
+ 
+Dos Acker
+dacker2@lsu.edu
+HisPassword
+CSC
+ 
+Ben Harrington
+bharri5@lsu.edu
+AnotherOne
+Computer Engineering
+ 
+Deante Dohman
+ddoman@lsu.edu
+4thPassword
+Computer Engineering
+ 
+Ryan Asermly
+raser@lsu.edu
+RyanPassword
+Theater
+ 

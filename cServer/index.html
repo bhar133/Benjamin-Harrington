@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiger Pair</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row homepage-header">
+            <div class="col-sm-12 text-center header-text">Tiger Pair</div>
+        </div>
+        <div class="spacer-lg text-center">
+            <img src="https://graduatestudies.lsuhsc.edu/LSU-Logo-1955-1966.png" class="img-rounded col-sm-2"
+                alt="Cinque Terre">
+        </div>
+        <form>
+            <div class="col-sm-4 spacer-lg col-centered input-group mb-3 w-25">
+                <span class="input-group-text">@</span>
+                <input type="email" id="login_email" class="form-control" placeholder="Your email" aria-label="Email"
+                    aria-describedby="basic-addon1">
+            </div>
+        </form>
+        <form>
+            <div class="col-sm-4 spacer-sm col-centered input-group mb-3 w-25">
+                <span class="input-group-text">@</span>
+                <input type="password" id="login_password" class="form-control" placeholder="Your password"
+                    aria-label="Password" aria-describedby="basic-addon1">
+            </div>
+        </form>
+        <div class="text-center">
+            <button id="myButton">Click Me</button>
+        </div>
+        <div class="text-center">
+            <a href="./messages/messages.html">
+                <button type="button" class="btn btn-info tiger-login-btn spacer-sm">Login</button>
+            </a>
+            <script src="js/bootstrap.bundle.min.js"></script>
+        </div>
+        <div class="text-center">
+            <button type="button" id="register" class="btn btn-info tiger-login-btn spacer-sm">Sign up</button>
+        </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPNKdcqwhpxGf0ssATcMoKFTmX530gvc4",
+            authDomain: "tiger-pair.firebaseapp.com",
+            projectId: "tiger-pair",
+            storageBucket: "tiger-pair.appspot.com",
+            messagingSenderId: "460056960692",
+            appId: "1:460056960692:web:dff1bd8124ef46f83601e1"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        // Registration code
+        document.getElementById("register").addEventListener("click", function () {
+            var email = document.getElementById("login_email").value;
+            var password = document.getElementById("login_password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Registration successful
+                    const user = userCredential.user;
+                    console.log(user);
+                    alert("Registration complete");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage);
+                    alert("Registration failed: " + errorMessage);
+                });
+        });
+
+        // Login code
+        document.getElementById("login").addEventListener("click", function () {
+            var email = document.getElementById("login_email").value;
+            var password = document.getElementById("login_password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Login successful
+                    const user = userCredential.user;
+                    console.log(user);
+                    alert(user.email + " Login Successful!!");
+                    document.getElementById('logout').style.display = 'block';
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage);
+                    alert("Email/password incorrect");
+                });
+        });
+
+        document.getElementById("logout").addEventListener("click", function () {
+            // Sign Out
+            signOut(auth).then(() => {
+                console.log('Sign out');
+                alert('Sign out successful');
+                document.getElementById('logout').style.display = 'none';
+            })
+                .catch((error) => {
+                    console.log('An error happened');
+                });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
